@@ -1,0 +1,21 @@
+<% if doctor.errors.any? %>
+<% doctor.errors.each do |error| %>
+<p> <%= error.full_message %></p>
+<% end %>
+
+<% end %>
+
+<%= form_with model: doctor do |form| %>
+
+<%= form.label :Name %>
+<%= form.text_field :name %>
+
+<%= form.label :Field %>
+<%= form.text_field :field %>
+
+<%= form.label :License_Number %>
+<%= form.text_field :license_number %>
+
+<%= form.submit %>
+
+<% end %>
