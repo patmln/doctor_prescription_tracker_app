@@ -1,0 +1,31 @@
+<h1>Hello from Medicine index page</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @medicines.each do |medicine| %>
+        <tr>
+            <td>
+            <%= medicine.name %>
+            </td>
+            <td>
+            <%= medicine.price %>
+            </td>
+            <td>
+            <%= link_to 'Edit', edit_medicine_path(medicine) %>
+            <%= link_to 'Delete', medicine, method: :delete, data: {confirm: 'Are you sure?'} %>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<%= link_to 'Add new medicine', new_medicine_path %>
+<%= link_to 'Go to doctors page', doctors_path %>

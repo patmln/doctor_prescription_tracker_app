@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     resources :prescriptions
   end
 
+  resources :medicines
+
   root to: 'doctors#index'
 end

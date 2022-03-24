@@ -12,7 +12,7 @@
 
 <p>
 <%= form.label :Medicine %>
-<%= form.text_field :medicine %>
+<%= form.select :medicine_id, Medicine.all.collect { |m| [ m.name, m.id ] }, include_blank: true %>
 </p>
 
 <p>
@@ -35,4 +35,3 @@
 </p>
 
 <% end %>
-    
