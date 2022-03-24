@@ -1,0 +1,38 @@
+<h1>Hello from index page</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Field</th>
+            <th>Prescription Count</th>
+            <th colspan="3">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @doctors.each do |doctor| %>
+        <tr>
+            <td>
+            <%= doctor.name %>
+            </td>
+            <td>
+            <%= doctor.field %>
+            </td>
+            <td>
+            <%= doctor.prescriptions.count %>
+            </td>
+            <td>
+            <%= link_to 'Prescriptions', doctor_prescriptions_path(doctor.id) %>
+            </td>
+            <td>
+            <%= link_to 'View', doctor_path(doctor) %>
+            <%= link_to 'Edit', edit_doctor_path(doctor) %>
+            <%= link_to 'Delete', doctor, method: :delete, data: {confirm: 'Are you sure?'} %>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<%= link_to 'Add new doctor', new_doctor_path %>

@@ -1,0 +1,45 @@
+<h1>Hello from Prescription Index page</h1>
+
+<%= @doctor.name  %>
+
+<h2>Prescriptions</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Medicine</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @prescriptions.each do |prescription| %>
+        <tr>
+            <td>
+            <%= prescription.title %>
+            </td>
+            <td>
+            <%= prescription.date %>
+            </td>
+            <td>
+            <%= prescription.medicine %>
+            </td>
+            <td>
+            <%= prescription.price %>
+            </td>
+            <td>
+            <%= prescription.quantity %>
+            </td>
+            <td>
+            <%= prescription.notes %>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<%= link_to 'Add new prescription', new_doctor_prescription_path %>

@@ -1,0 +1,38 @@
+<%= form_with scope: :prescription, model:[@doctor,@prescription] do |form| %>
+
+<p>
+<%= form.label :Title %>
+<%= form.text_field :title %>
+</p>
+
+<p>
+<%= form.label :Date %>
+<%= form.date_field :date %>
+</p>
+
+<p>
+<%= form.label :Medicine %>
+<%= form.text_field :medicine %>
+</p>
+
+<p>
+<%= form.label :Price %>
+<%= form.text_field :price %>
+</p>
+
+<p>
+<%= form.label :Quantity %>
+<%= form.text_field :quantity %>
+</p>
+
+<p>
+<%= form.label :Notes %>
+<%= form.text_field :notes %>
+</p>
+    
+<p>
+<%= form.submit %>
+</p>
+
+<% end %>
+    

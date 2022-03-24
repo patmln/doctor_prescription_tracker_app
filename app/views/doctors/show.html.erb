@@ -1,0 +1,17 @@
+<h1>Hello from Show page</h1>
+
+<h1><%= @id %></h1>
+
+<p>Name:
+    <span><%= @doctor.name %></span>
+</p>
+
+<p>Field:
+    <span><%= @doctor.field %></span>
+</p>
+
+<p>License Number:
+    <span><%= @doctor.license_number %></span>
+</p>
+
+<%= link_to 'Go to doctors page', doctors_path %>
