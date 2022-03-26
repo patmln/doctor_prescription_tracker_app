@@ -7,15 +7,23 @@
 
 <%= form_with model: doctor do |form| %>
 
+<p>
 <%= form.label :Name %>
 <%= form.text_field :name %>
+</p>
 
+<p>
 <%= form.label :Field %>
 <%= form.text_field :field %>
+</p>
 
+<p>
 <%= form.label :License_Number %>
 <%= form.text_field :license_number %>
+</p>
 
+<p>
 <%= form.submit %>
+</p>
 
 <% end %>

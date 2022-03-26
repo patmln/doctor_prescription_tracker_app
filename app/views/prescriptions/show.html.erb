@@ -1,0 +1,36 @@
+<h1>Prescription details</h1>
+
+<p>Title:
+    <span><%= @prescription.title %></span>
+</p>
+
+<p>Date:
+    <span><%= @prescription.date %></span>
+</p>
+
+<p>Medicine:
+    <span><%= @prescription.medicine %></span>
+</p>
+
+<p>Notes:
+    <span><%= @prescription.notes %></span>
+</p>
+
+<p>Price:
+    <span><%= @prescription.price %></span>
+</p>
+
+<p>Quantity:
+    <span><%= @prescription.quantity %></span>
+</p>
+
+<p>Total Price:
+    <span>
+        <%=
+            total = @prescription.price.to_f * @prescription.quantity.to_i 
+            "₱" + total.to_s 
+        %>
+    </span>
+</p>
+
+<%= link_to 'Go back', doctor_prescriptions_path(@doctor.id) %>

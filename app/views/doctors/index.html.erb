@@ -1,4 +1,6 @@
-<h1>Hello from index page</h1>
+<h1>Doctor-Prescription Tracker</h1>
+
+<h2>Doctors</h2>
 
 <table>
     <thead>
@@ -6,6 +8,7 @@
             <th>Name</th>
             <th>Field</th>
             <th>Prescription Count</th>
+            <th>Prescription</th>
             <th colspan="3">Action</th>
         </tr>
     </thead>
@@ -23,7 +26,7 @@
             <%= doctor.prescriptions.count %>
             </td>
             <td>
-            <%= link_to 'Prescriptions', doctor_prescriptions_path(doctor.id) %>
+            <%= link_to 'View prescriptions', doctor_prescriptions_path(doctor.id) %>
             </td>
             <td>
             <%= link_to 'View', doctor_path(doctor) %>
@@ -36,4 +39,5 @@
 </table>
 
 <%= link_to 'Add new doctor', new_doctor_path %>
-<%= link_to 'Go to medicines page', medicines_path %>
+<br>
+<%= link_to 'View all medicines', medicines_path %>

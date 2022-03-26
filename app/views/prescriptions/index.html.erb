@@ -1,6 +1,5 @@
-<h1>Hello from Prescription Index page</h1>
+<h1> <%= @doctor.name  %> </h1>
 
-<%= @doctor.name  %>
 
 <h2>Prescriptions</h2>
 
@@ -9,10 +8,7 @@
         <tr>
             <th>Title</th>
             <th>Date</th>
-            <th>Medicine</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Notes</th>
+            <th colspan="3">Action</th>
         </tr>
     </thead>
 
@@ -26,20 +22,16 @@
             <%= prescription.date %>
             </td>
             <td>
-            <%= prescription.medicine %>
-            </td>
-            <td>
-            <%= prescription.price %>
-            </td>
-            <td>
-            <%= prescription.quantity %>
-            </td>
-            <td>
-            <%= prescription.notes %>
+            <%= link_to 'View', doctor_prescription_path(@doctor.id, prescription.id) %>
+            <%= link_to 'Edit', edit_doctor_prescription_path(@doctor.id, prescription.id) %>
+            <%= link_to 'Delete', doctor_prescription_path(@doctor.id, prescription.id), method: :delete, data: {confirm: 'Are you sure?'} %>
             </td>
         </tr>
     <% end %>
     </tbody>
 </table>
 
+
 <%= link_to 'Add new prescription', new_doctor_prescription_path %>
+<br>
+<%= link_to 'Go back', doctors_path %>
